@@ -11,11 +11,13 @@ public class CivPlayer : MonoBehaviour
 
     Rigidbody2D rb;
     SpriteRenderer sprt;
+    Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sprt = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -26,10 +28,16 @@ public class CivPlayer : MonoBehaviour
         if (horizontal < 0)
         {
             sprt.flipX = true;
+            animator.SetBool("Walking", true);
         }
         else if (horizontal > 0)
         {
             sprt.flipX = false;
+            animator.SetBool("Walking", true);
+        }
+        else
+        {
+            animator.SetBool("Walking", false);
         }
     }
 
