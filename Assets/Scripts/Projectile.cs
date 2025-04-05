@@ -12,17 +12,22 @@ public class Projectile : MonoBehaviour
 
     [SerializeField] bool startDelayed;
 
+    private float timeToLive = 5f;
+
     private void Start()
     {
         if (startDelayed) { StartCoroutine(StartDelay()); }
+        else { ready = true; }
+        transform.right = target - (Vector2)transform.position;
     }
 
     private void Update()
     {
-        transform.right = target - (Vector2)transform.position;
-        if (ready) { transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime); }
+        
+        if (ready) { transform.position += transform.right * speed * Time.deltaTime; }
 
-        if (Vector2.Distance(transform.position, target) < 0.001f)
+        timeToLive -= Time.deltaTime;
+        if (timeToLive <= 0)
         {
             Destroy(gameObject);
         }
@@ -42,5 +47,18 @@ public class Projectile : MonoBehaviour
     {
         Destroy(gameObject);
         return damage;
+    }
+
+    private void Smash()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(!collision.CompareTag("Enemy") && !collision.CompareTag("Player"))
+        {
+            Smash();
+        }
     }
 }

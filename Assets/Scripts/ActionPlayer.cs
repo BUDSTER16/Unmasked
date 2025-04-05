@@ -20,6 +20,8 @@ public class ActionPlayer : MonoBehaviour
 
     private bool powerOnCooldown = false;
 
+    private int HP = 10;
+
     enum Power
     {
         Swords
@@ -75,5 +77,33 @@ public class ActionPlayer : MonoBehaviour
         powerOnCooldown = true;
         yield return new WaitForSeconds(0.7f);
         powerOnCooldown = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.tag);
+        if (collision.tag == "Enemy Projectile")
+        {
+            HP -= collision.GetComponent<Projectile>().hit();
+
+            if (HP <= 0)
+            {
+                Kill();
+            }
+
+            StartCoroutine(Hit());
+            IEnumerator Hit()
+            {
+                GetComponent<Renderer>().material.color = Color.red;
+                yield return new WaitForSeconds(0.1f);
+                GetComponent<Renderer>().material.color = Color.white;
+            }
+        }
+    }
+
+    private void Kill()
+    {
+        Debug.Log("PLAYER DIED");
+        Destroy(gameObject);
     }
 }
