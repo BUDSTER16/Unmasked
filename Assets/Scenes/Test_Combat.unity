@@ -288,6 +288,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 951930618220204543, guid: 653d1225dbeec744fa9974ef1fdcacde, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4256531952031224476, guid: 653d1225dbeec744fa9974ef1fdcacde, type: 3}
       propertyPath: m_Name
       value: Hero
@@ -349,6 +353,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -446,6 +451,24 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ae0b55ded76854c877625bbf43722d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1098823112}
+--- !u!4 &1098823112 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8350353556204069575, guid: 653d1225dbeec744fa9974ef1fdcacde, type: 3}
+  m_PrefabInstance: {fileID: 422872915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3140045668416183490
 PrefabInstance:
   m_ObjectHideFlags: 0
