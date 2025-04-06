@@ -20,7 +20,7 @@ public class ActionPlayer : MonoBehaviour
 
     private bool powerOnCooldown = false;
 
-    private int HP = 10;
+    private int HP = 20;
 
     private bool lockMovement = false;
     private Vector2 dest;

@@ -50,7 +50,7 @@ public class ChoiceTrigger : DialogueTrigger
             if(choiceMade && !dialogueDisplaying)
             {
                 choiceMade = false;
-                SceneManager.LoadScene("Test_Tasks");
+                SceneManager.LoadScene("Town");
             }
             if (!dialogueBox.activeInHierarchy)
             {

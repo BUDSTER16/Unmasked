@@ -8,7 +8,6 @@ public class SequenceTrigger : DialogueTrigger
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collision detected");
         if(collision.gameObject.CompareTag("Player"))
         {
             collision.GetComponent<ActionPlayer>().LockPlayerInput();

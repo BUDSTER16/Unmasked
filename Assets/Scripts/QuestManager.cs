@@ -8,6 +8,8 @@ public class QuestManager : MonoBehaviour
 
     private bool stoppedFinancier, stoppedPseudo, stoppedModder, stoppedDesire;
 
+    private bool foughtFinancier = false, foughtPseudo = false, foughtModder = false, foughtDesire = false, foughtBoss = false;
+
     public enum Quest
     {
         Financier,
@@ -31,15 +33,19 @@ public class QuestManager : MonoBehaviour
         {
             case Quest.Financier:
                 stoppedFinancier = true;
+                foughtFinancier = true;
                 break;
             case Quest.Pseudo:
                 stoppedPseudo = true;
+                foughtPseudo = true;
                 break;
             case Quest.Modder:
                 stoppedModder = true;
+                foughtModder = true;
                 break;
             case Quest.Desire:
                 stoppedDesire = true;
+                foughtDesire = true;
                 break;
         }
     }
@@ -48,17 +54,24 @@ public class QuestManager : MonoBehaviour
     {
         switch (currentQuest)
         {
+            case Quest.None:
+                foughtBoss = true;
+                break;
             case Quest.Financier:
                 stoppedFinancier = false;
+                foughtFinancier = true;
                 break;
             case Quest.Pseudo:
                 stoppedPseudo = false;
+                foughtPseudo = true;
                 break;
             case Quest.Modder:
                 stoppedModder = false;
+                foughtModder = true;
                 break;
             case Quest.Desire:
                 stoppedDesire = false;
+                foughtDesire = true;
                 break;
         }
     }
@@ -119,5 +132,29 @@ public class QuestManager : MonoBehaviour
                 break;
         }
         return stopped;
+    }
+
+    public bool VillainFought()
+    {
+        bool fought = false;
+        switch (currentQuest)
+        {
+            case Quest.None:
+                fought = foughtBoss;
+                break;
+            case Quest.Financier:
+                fought = foughtFinancier;
+                break;
+            case Quest.Pseudo:
+                fought = foughtPseudo;
+                break;
+            case Quest.Modder:
+                fought = foughtModder;
+                break;
+            case Quest.Desire:
+                fought = foughtDesire;
+                break;
+        }
+        return fought;
     }
 }

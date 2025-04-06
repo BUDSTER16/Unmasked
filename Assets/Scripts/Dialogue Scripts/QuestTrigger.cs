@@ -30,7 +30,7 @@ public class QuestTrigger : DialogueTrigger
                 }
             }
 
-            if (Input.GetKey(KeyCode.E) && !dialogueDisplaying && questManager.CurrentQuest() == quest)
+            if (Input.GetKey(KeyCode.E) && !dialogueDisplaying && questManager.CurrentQuest() == quest && questManager.VillainFought())
             {
                 if (questManager.VillainStopped(quest))
                 {
@@ -44,7 +44,7 @@ public class QuestTrigger : DialogueTrigger
                 dialogueDisplaying = true;
                 questManager.CompleteQuest();
             }
-            else if(Input.GetKey(KeyCode.E) && !dialogueDisplaying && questManager.CurrentQuest() != quest)
+            else if(Input.GetKey(KeyCode.E) && !dialogueDisplaying)
             {
                 Instantiate(dialogueBox).GetComponent<DialogueDisplay>().PassDialogue(dialogue);
                 dialogueDisplaying = true;

@@ -14,7 +14,7 @@ public class GunEnemy : Enemy
 
     private void Start()
     {
-        attackTimer = Random.Range(2, 3.5f);
+        attackTimer = Random.Range(2, 4.5f);
         player = FindAnyObjectByType<ActionPlayer>().gameObject.transform;
     }
 

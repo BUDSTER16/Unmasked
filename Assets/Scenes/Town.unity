@@ -183,6 +183,154 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 483ef7e9b81711648b102025fc2b7381, type: 3}
+--- !u!1 &289910781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 289910784}
+  - component: {fileID: 289910783}
+  - component: {fileID: 289910782}
+  - component: {fileID: 289910785}
+  m_Layer: 0
+  m_Name: Mask_stand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &289910782
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289910781}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.013101876, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.6, y: 3.2}
+    newSize: {x: 1.6, y: 3.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.4645042, y: 3.2}
+  m_EdgeRadius: 0
+--- !u!212 &289910783
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289910781}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 6d21bc6dec35bbf4db30a57a98d85112, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.6, y: 3.2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &289910784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289910781}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 41.47, y: -0.944, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &289910785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289910781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18aef63c0ddd256429ef9009a2161d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 8952199044555925240, guid: aa5ca3ee97631a14ebc769e440de0d08, type: 3}
+  dialogue:
+    dialogueName: Brennan
+    dialogueText:
+    - I have stuff I need to do as Brennan today!
 --- !u!4 &515826289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7479026751471114096, guid: 483ef7e9b81711648b102025fc2b7381, type: 3}
@@ -341,8 +489,8 @@ Transform:
   m_GameObject: {fileID: 848734623}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.4506, y: -2.39, z: 0}
-  m_LocalScale: {x: 87.3362, y: 1, z: 1}
+  m_LocalPosition: {x: -2.6975, y: -2.39, z: 0}
+  m_LocalScale: {x: 90.83838, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -471,63 +619,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1534297365
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6074596242578955413, guid: c7609a99cc775d1489677a5a1703541e, type: 3}
-      propertyPath: m_Name
-      value: CutsceneManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167376359085140235, guid: c7609a99cc775d1489677a5a1703541e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 30.444477
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167376359085140235, guid: c7609a99cc775d1489677a5a1703541e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 28.737429
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167376359085140235, guid: c7609a99cc775d1489677a5a1703541e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.34511262
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167376359085140235, guid: c7609a99cc775d1489677a5a1703541e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167376359085140235, guid: c7609a99cc775d1489677a5a1703541e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167376359085140235, guid: c7609a99cc775d1489677a5a1703541e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167376359085140235, guid: c7609a99cc775d1489677a5a1703541e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167376359085140235, guid: c7609a99cc775d1489677a5a1703541e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167376359085140235, guid: c7609a99cc775d1489677a5a1703541e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9167376359085140235, guid: c7609a99cc775d1489677a5a1703541e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c7609a99cc775d1489677a5a1703541e, type: 3}
 --- !u!1 &1654843705
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,63 +885,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 515826289}
---- !u!1001 &265257930469865142
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2142328067046239019, guid: 0577df84bb9155c40a4bebd67cfff67f, type: 3}
-      propertyPath: m_Name
-      value: QuestManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 3776367256698043774, guid: 0577df84bb9155c40a4bebd67cfff67f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.4221914
-      objectReference: {fileID: 0}
-    - target: {fileID: 3776367256698043774, guid: 0577df84bb9155c40a4bebd67cfff67f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.66714
-      objectReference: {fileID: 0}
-    - target: {fileID: 3776367256698043774, guid: 0577df84bb9155c40a4bebd67cfff67f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.05012847
-      objectReference: {fileID: 0}
-    - target: {fileID: 3776367256698043774, guid: 0577df84bb9155c40a4bebd67cfff67f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3776367256698043774, guid: 0577df84bb9155c40a4bebd67cfff67f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3776367256698043774, guid: 0577df84bb9155c40a4bebd67cfff67f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3776367256698043774, guid: 0577df84bb9155c40a4bebd67cfff67f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3776367256698043774, guid: 0577df84bb9155c40a4bebd67cfff67f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3776367256698043774, guid: 0577df84bb9155c40a4bebd67cfff67f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3776367256698043774, guid: 0577df84bb9155c40a4bebd67cfff67f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0577df84bb9155c40a4bebd67cfff67f, type: 3}
 --- !u!1001 &896920488671497858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -989,6 +1023,89 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: dialogue.dialogueName
+      value: Brennan
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: stoppedDialogue.dialogueName
+      value: Brennan
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: releasedDialogue.dialogueName
+      value: Brennan
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: dialogue.dialogueText.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: dialogue.dialogueText.Array.data[0]
+      value: The courthouse is probably the last building in the neighborhood kept
+        in pristine condition.
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: dialogue.dialogueText.Array.data[1]
+      value: Unfortunately, the court here is notoriously corrupt.
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: stoppedDialogue.dialogueText.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: releasedDialogue.dialogueText.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: stoppedDialogue.dialogueText.Array.data[0]
+      value: Stopping Modder was only the start of my problems with him.
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: stoppedDialogue.dialogueText.Array.data[1]
+      value: I lost access to most of my accounts, I can't recover them and the passwords
+        are all changed.
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: stoppedDialogue.dialogueText.Array.data[2]
+      value: To make matters worse, Modder isn't staying in prison without a fight.
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: stoppedDialogue.dialogueText.Array.data[3]
+      value: Modder decided to take me to court, the judge is surely bribed and he
+        has mysterious backers to draw out the case.
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: stoppedDialogue.dialogueText.Array.data[4]
+      value: I'm going to be spending a lot of time at the courthouse from now on...
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: stoppedDialogue.dialogueText.Array.data[5]
+      value: I wish I could have my normal life back, I can't keep track of all of
+        this!
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: releasedDialogue.dialogueText.Array.data[0]
+      value: I was summoned for jury duty, its one of many murder cases lately.
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: releasedDialogue.dialogueText.Array.data[1]
+      value: The defendant doesn't deny killing the victim, he's denying that the
+        victim was human.
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: releasedDialogue.dialogueText.Array.data[2]
+      value: With Modder freely roaming, he's been kidnapping people and modifying
+        them into metallic monsters.
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: releasedDialogue.dialogueText.Array.data[3]
+      value: Fed up and scared, people have started to hunt down Modder's poor victms
+        and cut them down just like the defendant here.
+      objectReference: {fileID: 0}
+    - target: {fileID: 651531237394706283, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
+      propertyPath: releasedDialogue.dialogueText.Array.data[4]
+      value: Why did I let Modder go free....
+      objectReference: {fileID: 0}
     - target: {fileID: 1257288079398873539, guid: d1967338229a0a24e9472e30ec0adaa9, type: 3}
       propertyPath: m_Size.y
       value: 6.580224
@@ -1184,11 +1301,10 @@ SceneRoots:
   - {fileID: 848734627}
   - {fileID: 109267064}
   - {fileID: 869451463}
-  - {fileID: 265257930469865142}
   - {fileID: 896920488671497858}
   - {fileID: 4493904028007436546}
   - {fileID: 1479453017068095877}
   - {fileID: 6577604168122424255}
   - {fileID: 1676235218970808441}
   - {fileID: 1654843709}
-  - {fileID: 1534297365}
+  - {fileID: 289910784}
