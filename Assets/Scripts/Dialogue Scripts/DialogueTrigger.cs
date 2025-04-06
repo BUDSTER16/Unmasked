@@ -8,6 +8,9 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] protected GameObject dialogueBox;
     [SerializeField] protected Dialogue dialogue;
 
+    [SerializeField] private bool contactTrigger;
+    [SerializeField] private int cutsceneIndex; // 0 for none
+
     protected bool dialogueDisplaying = false;
 
     
@@ -16,7 +19,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player") && !contactTrigger)
         {
             if(Input.GetKey(KeyCode.E) && dialogueDisplaying)
             {
@@ -30,6 +33,23 @@ public class DialogueTrigger : MonoBehaviour
                 Debug.Log("A player collided and pressed E!");
                 Instantiate(dialogueBox).GetComponent<DialogueDisplay>().PassDialogue(dialogue);
                 dialogueDisplaying = true;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && contactTrigger)
+        {
+            
+            if (!dialogueDisplaying)
+            {
+                Instantiate(dialogueBox).GetComponent<DialogueDisplay>().PassDialogue(dialogue);
+                dialogueDisplaying = true;
+            }
+            if(cutsceneIndex > 0)
+            {
+                FindObjectOfType<CutsceneManager>().TriggerCutscene(cutsceneIndex);
             }
         }
     }

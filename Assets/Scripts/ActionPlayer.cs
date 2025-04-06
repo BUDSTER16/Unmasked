@@ -22,6 +22,9 @@ public class ActionPlayer : MonoBehaviour
 
     private int HP = 10;
 
+    private bool lockMovement = false;
+    private Vector2 dest;
+
     enum Power
     {
         Swords
@@ -47,15 +50,25 @@ public class ActionPlayer : MonoBehaviour
             spriteRenderer.flipX = false;
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !lockMovement)
         {
             UsePower();
+        }
+
+        if(lockMovement)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, dest, speed * Time.deltaTime);
         }
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, vertical * speed / 2);
+        if (!lockMovement) { rb.velocity = new Vector2(horizontal * speed, vertical * speed / 1.5f); }
+        else 
+        {
+            rb.velocity = Vector2.zero; 
+            
+        }
     }
 
     private void UsePower()
@@ -105,5 +118,15 @@ public class ActionPlayer : MonoBehaviour
     {
         Debug.Log("PLAYER DIED");
         Destroy(gameObject);
+    }
+
+    public void LockPlayerInput()
+    {
+        lockMovement = true;
+    }
+
+    public void Sequence(Vector2 destination)
+    {
+        dest = destination;
     }
 }

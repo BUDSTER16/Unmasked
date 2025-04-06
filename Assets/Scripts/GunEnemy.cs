@@ -7,13 +7,14 @@ public class GunEnemy : Enemy
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject muzzle;
 
-    private float attackTimer = 3f;
+    private float attackTimer;
     [SerializeField] private float attackCD = 3f;
 
     private Transform player;
 
     private void Start()
     {
+        attackTimer = Random.Range(2, 3.5f);
         player = FindAnyObjectByType<ActionPlayer>().gameObject.transform;
     }
 

@@ -11,6 +11,8 @@ public class ChoiceTrigger : DialogueTrigger
 
     [SerializeField] private Dialogue releasedDialogue;
 
+    private bool choiceMade = false;
+
     private void Start()
     {
         questManager = FindFirstObjectByType<QuestManager>();
@@ -42,6 +44,11 @@ public class ChoiceTrigger : DialogueTrigger
                 }
 
                 dialogueDisplaying = true;
+            }
+
+            if(choiceMade && !dialogueDisplaying)
+            {
+                //go to town scene and start night quest
             }
         }
     }
