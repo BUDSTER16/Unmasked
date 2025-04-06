@@ -5,10 +5,14 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
 
-    [SerializeField] GameObject dialogueBox;
-    [SerializeField] Dialogue dialogue;
+    [SerializeField] protected GameObject dialogueBox;
+    [SerializeField] protected Dialogue dialogue;
 
-    private bool dialogueDisplaying = false;
+    protected bool dialogueDisplaying = false;
+
+    
+
+    
 
     private void OnTriggerStay2D(Collider2D collision)
     {
