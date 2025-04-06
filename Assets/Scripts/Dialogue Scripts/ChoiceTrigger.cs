@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChoiceTrigger : DialogueTrigger
 {
@@ -42,13 +43,18 @@ public class ChoiceTrigger : DialogueTrigger
                     Instantiate(dialogueBox).GetComponent<DialogueDisplay>().PassDialogue(releasedDialogue);
                     questManager.LeaveVillain();
                 }
-
+                choiceMade = true;
                 dialogueDisplaying = true;
             }
 
             if(choiceMade && !dialogueDisplaying)
             {
-                //go to town scene and start night quest
+                choiceMade = false;
+                SceneManager.LoadScene("Test_Tasks");
+            }
+            if (!dialogueBox.activeInHierarchy)
+            {
+                dialogueDisplaying = false;
             }
         }
     }

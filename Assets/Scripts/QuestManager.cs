@@ -21,7 +21,7 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
-        currentQuest = Quest.Financier;
+        currentQuest = Quest.None;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -68,6 +68,9 @@ public class QuestManager : MonoBehaviour
         Quest nextQuest = Quest.None;
         switch (currentQuest)
         {
+            case Quest.None:
+                nextQuest = Quest.Financier;
+                break;
             case Quest.Financier:
                 groceries = true;
                 nextQuest = Quest.Pseudo;

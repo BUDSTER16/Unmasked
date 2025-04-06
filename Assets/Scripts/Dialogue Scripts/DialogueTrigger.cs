@@ -51,6 +51,7 @@ public class DialogueTrigger : MonoBehaviour
             {
                 FindObjectOfType<CutsceneManager>().TriggerCutscene(cutsceneIndex);
             }
+            Destroy(gameObject);
         }
     }
 }

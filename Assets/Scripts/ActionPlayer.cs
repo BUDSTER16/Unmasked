@@ -58,6 +58,10 @@ public class ActionPlayer : MonoBehaviour
         if(lockMovement)
         {
             transform.position = Vector2.MoveTowards(transform.position, dest, speed * Time.deltaTime);
+            if (Vector3.Distance(transform.position, dest) < 0.01)
+            {
+                lockMovement = false;
+            }
         }
     }
 
