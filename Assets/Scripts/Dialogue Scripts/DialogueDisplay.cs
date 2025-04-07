@@ -31,11 +31,17 @@ public class DialogueDisplay : MonoBehaviour
         {
             dialogueBox.text = currentDialogue.GetText()[currentIndex];
             currentIndex++;
+            AdvanceCutscene();
         }
         else
         {
             Time.timeScale = 1;
             Destroy(gameObject);
         }
+    }
+
+    private void AdvanceCutscene()
+    {
+        FindAnyObjectByType<CutsceneManager>().NextPanel();
     }
 }

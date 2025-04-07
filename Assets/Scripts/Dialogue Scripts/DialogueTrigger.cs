@@ -5,14 +5,21 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
 
-    [SerializeField] GameObject dialogueBox;
-    [SerializeField] Dialogue dialogue;
+    [SerializeField] protected GameObject dialogueBox;
+    [SerializeField] protected Dialogue dialogue;
 
-    private bool dialogueDisplaying = false;
+    [SerializeField] private bool contactTrigger;
+    [SerializeField] private int cutsceneIndex; // 0 for none
+
+    protected bool dialogueDisplaying = false;
+
+    
+
+    
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player") && !contactTrigger)
         {
             if(Input.GetKey(KeyCode.E) && dialogueDisplaying)
             {
@@ -23,10 +30,27 @@ public class DialogueTrigger : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.E) && !dialogueDisplaying)
             {
-                Debug.Log("A player collided and pressed E!");
                 Instantiate(dialogueBox).GetComponent<DialogueDisplay>().PassDialogue(dialogue);
                 dialogueDisplaying = true;
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && contactTrigger)
+        {
+            
+            if (!dialogueDisplaying)
+            {
+                Instantiate(dialogueBox).GetComponent<DialogueDisplay>().PassDialogue(dialogue);
+                dialogueDisplaying = true;
+            }
+            if(cutsceneIndex > 0)
+            {
+                FindObjectOfType<CutsceneManager>().TriggerCutscene(cutsceneIndex);
+            }
+            Destroy(gameObject);
         }
     }
 }

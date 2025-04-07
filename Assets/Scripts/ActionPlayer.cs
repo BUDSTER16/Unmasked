@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ActionPlayer : MonoBehaviour
 {
@@ -20,7 +21,10 @@ public class ActionPlayer : MonoBehaviour
 
     private bool powerOnCooldown = false;
 
-    private int HP = 10;
+    private int HP = 14;
+
+    private bool lockMovement = false;
+    private Vector2 dest;
 
     enum Power
     {
@@ -47,15 +51,29 @@ public class ActionPlayer : MonoBehaviour
             spriteRenderer.flipX = false;
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !lockMovement)
         {
             UsePower();
+        }
+
+        if(lockMovement)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, dest, speed * Time.deltaTime);
+            if (Vector3.Distance(transform.position, dest) < 0.01)
+            {
+                lockMovement = false;
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, vertical * speed / 2);
+        if (!lockMovement) { rb.velocity = new Vector2(horizontal * speed, vertical * speed / 1.5f); }
+        else 
+        {
+            rb.velocity = Vector2.zero; 
+            
+        }
     }
 
     private void UsePower()
@@ -66,6 +84,7 @@ public class ActionPlayer : MonoBehaviour
             {
                 case Power.Swords:
                     Instantiate(sword, transform.position + (Vector3.up * 1.4f), Quaternion.identity).GetComponent<Projectile>().SetTarget(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                    GetComponent<Animator>().SetTrigger("Attack");
                     break;
             }
             StartCoroutine(Cooldown());
@@ -81,7 +100,6 @@ public class ActionPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.tag);
         if (collision.tag == "Enemy Projectile")
         {
             HP -= collision.GetComponent<Projectile>().hit();
@@ -103,7 +121,16 @@ public class ActionPlayer : MonoBehaviour
 
     private void Kill()
     {
-        Debug.Log("PLAYER DIED");
-        Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LockPlayerInput()
+    {
+        lockMovement = true;
+    }
+
+    public void Sequence(Vector2 destination)
+    {
+        dest = destination;
     }
 }
