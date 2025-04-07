@@ -30,7 +30,6 @@ public class DialogueTrigger : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.E) && !dialogueDisplaying)
             {
-                Debug.Log("A player collided and pressed E!");
                 Instantiate(dialogueBox).GetComponent<DialogueDisplay>().PassDialogue(dialogue);
                 dialogueDisplaying = true;
             }

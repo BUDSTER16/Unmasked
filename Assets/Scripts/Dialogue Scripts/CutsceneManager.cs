@@ -16,9 +16,20 @@ public class CutsceneManager : MonoBehaviour
     private int currentPanel = 0;
     private GameObject activeComic;
 
+    private static CutsceneManager instance;
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     //Sequence based comic book style art
@@ -56,7 +67,6 @@ public class CutsceneManager : MonoBehaviour
 
         if(activeCut != null && activeCut.ContainsFrameAt(currentPanel))
         {
-            Debug.Log("GOT TO THE PANEL CODE");
             panels[currentPanel].gameObject.SetActive(true);
             panels[currentPanel].sprite = activeCut.GetScene(currentPanel);
             currentPanel++;

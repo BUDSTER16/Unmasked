@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ActionPlayer : MonoBehaviour
 {
@@ -83,6 +84,7 @@ public class ActionPlayer : MonoBehaviour
             {
                 case Power.Swords:
                     Instantiate(sword, transform.position + (Vector3.up * 1.4f), Quaternion.identity).GetComponent<Projectile>().SetTarget(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                    GetComponent<Animator>().SetTrigger("Attack");
                     break;
             }
             StartCoroutine(Cooldown());
@@ -98,7 +100,6 @@ public class ActionPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.tag);
         if (collision.tag == "Enemy Projectile")
         {
             HP -= collision.GetComponent<Projectile>().hit();
@@ -120,8 +121,7 @@ public class ActionPlayer : MonoBehaviour
 
     private void Kill()
     {
-        Debug.Log("PLAYER DIED");
-        Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void LockPlayerInput()

@@ -8,7 +8,6 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.tag);
         if(collision.tag == "Player Projectile")
         {
             HP -= collision.GetComponent<Projectile>().hit();

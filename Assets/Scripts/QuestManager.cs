@@ -11,6 +11,8 @@ public class QuestManager : MonoBehaviour
 
     private bool foughtFinancier = false, foughtPseudo = false, foughtModder = false, foughtDesire = false, foughtBoss = false;
 
+    private static QuestManager instance;
+
     public enum Quest
     {
         Financier,
@@ -26,6 +28,15 @@ public class QuestManager : MonoBehaviour
     {
         currentQuest = Quest.None;
         DontDestroyOnLoad(gameObject);
+
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void StopVillain()
