@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test_Combat.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pseudo_Combat.unity
     guid: 15356623fabcb2b43a197adfcbdcd861
+  - enabled: 1
+    path: Assets/Scenes/Modder_Combat.unity
+    guid: 86c4f260211252e4c9ba08a60c12f3c3
+  - enabled: 1
+    path: Assets/Scenes/Desire_Combat.unity
+    guid: 36edf06c6986eef478f42658331f76a8
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 7b7addd5f23b7ed49b507467ceedff70
   m_configObjects: {}

@@ -183,6 +183,104 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f733e09c030d2924591c661ddf43c167, type: 3}
+--- !u!1 &255587352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 255587353}
+  - component: {fileID: 255587355}
+  - component: {fileID: 255587354}
+  m_Layer: 0
+  m_Name: Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &255587353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255587352}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -62.38, y: -33.46, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 720350699}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &255587354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255587352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4bbf7b7981a5944a14f51cd81a531b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 8952199044555925240, guid: aa5ca3ee97631a14ebc769e440de0d08, type: 3}
+  dialogue:
+    dialogueName: Digisword
+    dialogueText:
+    - I got reports that the villain Financier is active in the area
+    - According to my info, he's on a lower rooftop
+  contactTrigger: 1
+  cutsceneIndex: 0
+--- !u!61 &255587355
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255587352}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &260724580
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +359,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3021917564691013299, guid: f733e09c030d2924591c661ddf43c167, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.79
+      value: 34.45
       objectReference: {fileID: 0}
     - target: {fileID: 3021917564691013299, guid: f733e09c030d2924591c661ddf43c167, type: 3}
       propertyPath: m_LocalPosition.y
@@ -582,7 +680,7 @@ Transform:
   m_GameObject: {fileID: 541905617}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 12.7, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -664,6 +762,7 @@ Transform:
   m_Children:
   - {fileID: 1948208745}
   - {fileID: 2028242279}
+  - {fileID: 255587353}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1043606779
@@ -768,11 +867,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8350353556204069575, guid: 653d1225dbeec744fa9974ef1fdcacde, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.23
+      value: -15.6
       objectReference: {fileID: 0}
     - target: {fileID: 8350353556204069575, guid: 653d1225dbeec744fa9974ef1fdcacde, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.05
+      value: -11.6
       objectReference: {fileID: 0}
     - target: {fileID: 8350353556204069575, guid: 653d1225dbeec744fa9974ef1fdcacde, type: 3}
       propertyPath: m_LocalPosition.z
@@ -837,7 +936,7 @@ Transform:
   m_GameObject: {fileID: 1068035796}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55.3, y: 0, z: 0}
+  m_LocalPosition: {x: 18.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1097,7 +1196,7 @@ MonoBehaviour:
     dialogueText:
     - It's a pleasure doing business with you.
     - Make sure you get your money out of the bank soon, now you owe me one!
-  contactTrigger: 1
+  contactTrigger: 0
   cutsceneIndex: 0
   quest: 0
   stopVillain: 0
@@ -1258,7 +1357,7 @@ MonoBehaviour:
       Brennan.
   contactTrigger: 0
   cutsceneIndex: 0
-  quest: 4
+  quest: 0
   stopVillain: 1
   releasedDialogue:
     dialogueName: 

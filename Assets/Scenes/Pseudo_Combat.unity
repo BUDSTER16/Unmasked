@@ -399,7 +399,7 @@ Transform:
   m_GameObject: {fileID: 321447514}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.1, y: 0, z: 0}
+  m_LocalPosition: {x: -20.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -537,7 +537,7 @@ Transform:
   m_GameObject: {fileID: 373602349}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.3, y: -11, z: -10}
+  m_LocalPosition: {x: 69.2, y: 12.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -556,6 +556,106 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1805326740}
+--- !u!1 &508620767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 508620768}
+  - component: {fileID: 508620770}
+  - component: {fileID: 508620769}
+  m_Layer: 0
+  m_Name: Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &508620768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508620767}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 22.7, y: -10.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 720350699}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &508620769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508620767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4bbf7b7981a5944a14f51cd81a531b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 8952199044555925240, guid: aa5ca3ee97631a14ebc769e440de0d08, type: 3}
+  dialogue:
+    dialogueName: Digisword
+    dialogueText:
+    - Apparently the fake-hero Pseudo is in the area, this guy is tricky
+    - He convinces people that he's a hero by fighting fake villains of his own design
+      and causing as much destruction as possible in the process
+    - He should be hovering in the air somewhere.
+  contactTrigger: 1
+  cutsceneIndex: 0
+--- !u!61 &508620770
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508620767}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &541905617
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +682,7 @@ Transform:
   m_GameObject: {fileID: 541905617}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 12.7, z: 0}
+  m_LocalPosition: {x: 0, y: -1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -664,6 +764,7 @@ Transform:
   m_Children:
   - {fileID: 1948208745}
   - {fileID: 2028242279}
+  - {fileID: 508620768}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1043606779
@@ -768,11 +869,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8350353556204069575, guid: 653d1225dbeec744fa9974ef1fdcacde, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.23
+      value: 69.7
       objectReference: {fileID: 0}
     - target: {fileID: 8350353556204069575, guid: 653d1225dbeec744fa9974ef1fdcacde, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.05
+      value: 11.2
       objectReference: {fileID: 0}
     - target: {fileID: 8350353556204069575, guid: 653d1225dbeec744fa9974ef1fdcacde, type: 3}
       propertyPath: m_LocalPosition.z
@@ -898,11 +999,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3021917564691013299, guid: f733e09c030d2924591c661ddf43c167, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.6850357
+      value: 25.78
       objectReference: {fileID: 0}
     - target: {fileID: 3021917564691013299, guid: f733e09c030d2924591c661ddf43c167, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.57
+      value: 3.57
       objectReference: {fileID: 0}
     - target: {fileID: 3021917564691013299, guid: f733e09c030d2924591c661ddf43c167, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1073,7 +1174,7 @@ Transform:
   m_GameObject: {fileID: 1176789771}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.822266, y: -5.4066496, z: 0}
+  m_LocalPosition: {x: -7.93, y: 20.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1095,9 +1196,9 @@ MonoBehaviour:
   dialogue:
     dialogueName: 
     dialogueText: []
-  contactTrigger: 1
+  contactTrigger: 0
   cutsceneIndex: 0
-  quest: 0
+  quest: 1
   stopVillain: 0
   releasedDialogue:
     dialogueName: Pseudo
@@ -1212,7 +1313,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 326396764fcadd94e9f42ee1ee82e5e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.92, y: 1.92}
@@ -1230,7 +1331,7 @@ Transform:
   m_GameObject: {fileID: 1240433400}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.5, y: -5.7, z: 0}
+  m_LocalPosition: {x: -4, y: 20.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1256,7 +1357,7 @@ MonoBehaviour:
     - But you'll see, you don't really have a chance.
   contactTrigger: 0
   cutsceneIndex: 0
-  quest: 4
+  quest: 1
   stopVillain: 1
   releasedDialogue:
     dialogueName: 
@@ -1648,7 +1749,7 @@ Transform:
   m_GameObject: {fileID: 1610978406}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -38.02, z: 0}
+  m_LocalPosition: {x: 0, y: -28.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1851,7 +1952,7 @@ Transform:
   m_GameObject: {fileID: 1751793786}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.1, y: -19.4, z: 0}
+  m_LocalPosition: {x: 24.1, y: -10, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2057,7 +2158,7 @@ MonoBehaviour:
     - I've been expecting you
   contactTrigger: 0
   cutsceneIndex: 0
-  destination: {x: 23, y: -4.5}
+  destination: {x: -1, y: 20}
 --- !u!61 &1948208744
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2090,7 +2191,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -7.228918}
+  m_Offset: {x: 0, y: -8.915076}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2101,7 +2202,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 23.145275}
+  m_Size: {x: 1, y: 26.517591}
   m_EdgeRadius: 0
 --- !u!4 &1948208745
 Transform:
@@ -2111,13 +2212,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948208742}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -15.9, y: -21.5, z: -0.22043607}
+  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: -42.2, y: -1.6, z: -0.22043607}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 720350699}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
 --- !u!1 &1997988853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2165,7 +2266,7 @@ GameObject:
   - component: {fileID: 2028242281}
   - component: {fileID: 2028242280}
   m_Layer: 0
-  m_Name: FinancierDialogue
+  m_Name: PseudoDialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2180,7 +2281,7 @@ Transform:
   m_GameObject: {fileID: 2028242278}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.91874, y: -26.287443, z: -0.107588924}
+  m_LocalPosition: {x: -47.91874, y: -1.7874432, z: -0.107588924}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

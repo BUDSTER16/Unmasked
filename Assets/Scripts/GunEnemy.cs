@@ -49,6 +49,8 @@ public class GunEnemy : Enemy
         {
             Instantiate(bullet, muzzle.transform.position + new Vector3(-0.5f, 0.1f, 0), Quaternion.identity)
                .GetComponent<Projectile>().SetTarget(player.position);
+
+            GetComponent<AudioSource>().Play();
         }
     }
 }

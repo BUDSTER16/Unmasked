@@ -1005,6 +1005,10 @@ MonoBehaviour:
     - I can take out the gunmen with my Sword Summon power (left click)
     - I need to keep moving and using the buildings as cover to attack from better
       angles!
+    - By the way, I can press E to interact with building entrances and people (Villains,
+      not gunmen)!
+    - Hey! hope you didn't zone out when I was talking, especially when I told you
+      that pressing E interacts with buildings and villains!
   contactTrigger: 1
   cutsceneIndex: 0
 --- !u!61 &1123255592
@@ -1194,6 +1198,7 @@ MonoBehaviour:
     dialogueText:
     - You don't have what it takes to survive now "Brennan"
     - And you can't catch me anyway, I can send you to your apartment. Goodbye Brennan
+    - Enjoy your plunge into the depths of despair
 --- !u!61 &1240433404
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2253,6 +2258,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3399803166115226478, guid: c7609a99cc775d1489677a5a1703541e, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6074596242578955413, guid: c7609a99cc775d1489677a5a1703541e, type: 3}
       propertyPath: m_Name
       value: CutsceneManager

@@ -12,6 +12,9 @@ public class QuestTrigger : DialogueTrigger
     [SerializeField] private Dialogue stoppedDialogue;
     [SerializeField] private Dialogue releasedDialogue;
 
+    private bool talked = false;
+    private GameObject dialogActive;
+
     private void Start()
     {
         questManager = FindFirstObjectByType<QuestManager>();
@@ -30,6 +33,11 @@ public class QuestTrigger : DialogueTrigger
                 }
             }
 
+            if (talked && !dialogueDisplaying)
+            {
+                questManager.CompleteQuest();
+            }
+
             if (Input.GetKey(KeyCode.E) && !dialogueDisplaying && questManager.CurrentQuest() == quest && questManager.VillainFought())
             {
                 if (questManager.VillainStopped(quest))
@@ -42,13 +50,15 @@ public class QuestTrigger : DialogueTrigger
                 }
 
                 dialogueDisplaying = true;
-                questManager.CompleteQuest();
+                talked = true;
             }
             else if(Input.GetKey(KeyCode.E) && !dialogueDisplaying)
             {
                 Instantiate(dialogueBox).GetComponent<DialogueDisplay>().PassDialogue(dialogue);
                 dialogueDisplaying = true;
             }
+
+        
         }
     }
 }

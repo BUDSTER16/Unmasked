@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class QuestManager : MonoBehaviour
 {
@@ -98,6 +99,7 @@ public class QuestManager : MonoBehaviour
                 break;
             case Quest.Desire:
                 dinner = true;
+                SceneManager.LoadScene("End");
                 break;
         }
         currentQuest = nextQuest;
@@ -156,5 +158,36 @@ public class QuestManager : MonoBehaviour
                 break;
         }
         return fought;
+    }
+
+    public string Task()
+    {
+        string task = "";
+
+        switch(currentQuest)
+        {
+            case Quest.None:
+                if(foughtBoss) { task = "Go to sleep"; }
+                else { task = "Endgame"; }
+                break;
+            case Quest.Financier:
+                if (foughtFinancier) { task = "Go get groceries"; }
+                else { task = "Put on the mask in your apartment"; }
+                break;
+            case Quest.Pseudo:
+                if (foughtPseudo) { task = "Volunteer at the homeless shelter"; }
+                else { task = "Put on the mask in your apartment"; }
+                break;
+            case Quest.Modder:
+                if (foughtModder) { task = "Go to the courthouse (on the far side of town)"; }
+                else { task = "Put on the mask in your apartment"; }
+                break;
+            case Quest.Desire:
+                if (foughtDesire) { task = "Take the bus"; }
+                else { task = "Put on the mask in your apartment"; }
+                break;
+        }
+
+        return task;
     }
 }
