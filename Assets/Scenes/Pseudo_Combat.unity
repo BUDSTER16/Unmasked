@@ -2301,14 +2301,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 8952199044555925240, guid: aa5ca3ee97631a14ebc769e440de0d08, type: 3}
   dialogue:
-    dialogueName: Financier
+    dialogueName: Pseudo
     dialogueText:
-    - Hold on now... Brennan.
-    - I seem to be in a vulnerable spot, huh?
-    - Fortunately for me, You're going to let me go. If you should refuse, I'll make
-      sure your life is a nightmare.
-    - I know your real name, and I've put safeguards in place so if you do anything
-      to me, you'll suffer
+    - Well hello Brennan! What's a hero without a secret identity?
+    - The world doesn't need someone like that, they need me, PSEUDO!
+    - I am entertainment incarnate! I supply the villains! I am the hero!
+    - Taking me down would only serve to make yourself hated! Everyone love me!
   contactTrigger: 1
   cutsceneIndex: 0
 --- !u!61 &2028242281

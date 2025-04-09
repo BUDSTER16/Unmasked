@@ -33,20 +33,15 @@ public class QuestTrigger : DialogueTrigger
                 }
             }
 
-            if (talked && !dialogueDisplaying)
-            {
-                questManager.CompleteQuest();
-            }
-
             if (Input.GetKey(KeyCode.E) && !dialogueDisplaying && questManager.CurrentQuest() == quest && questManager.VillainFought())
             {
                 if (questManager.VillainStopped(quest))
                 {
-                    Instantiate(dialogueBox).GetComponent<DialogueDisplay>().PassDialogue(stoppedDialogue);
+                    Instantiate(dialogueBox).GetComponent<DialogueDisplay>().PassDialogue(stoppedDialogue, this);
                 }
                 else
                 {
-                    Instantiate(dialogueBox).GetComponent<DialogueDisplay>().PassDialogue(releasedDialogue);
+                    Instantiate(dialogueBox).GetComponent<DialogueDisplay>().PassDialogue(releasedDialogue, this);
                 }
 
                 dialogueDisplaying = true;
@@ -60,5 +55,10 @@ public class QuestTrigger : DialogueTrigger
 
         
         }
+    }
+
+    public void EndText()
+    {
+        questManager.CompleteQuest();
     }
 }

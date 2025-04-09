@@ -1369,7 +1369,7 @@ MonoBehaviour:
   dialogue:
     dialogueName: Desire
     dialogueText: []
-  contactTrigger: 1
+  contactTrigger: 0
   cutsceneIndex: 0
   quest: 3
   stopVillain: 0
