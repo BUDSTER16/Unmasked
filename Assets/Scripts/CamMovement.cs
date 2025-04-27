@@ -16,4 +16,9 @@ public class CamMovement : MonoBehaviour
         Vector3 playerPos = player.position + camOffset;
         transform.position = Vector3.SmoothDamp(transform.position, playerPos, ref velocity, catchTime);
     }
+
+    public void ReCenter()
+    {
+        transform.position = player.position + camOffset;
+    }
 }
