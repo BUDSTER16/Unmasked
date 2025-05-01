@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  tTip: {fileID: 7595885468550638989, guid: e6e45f42a68693d41956cfe688fbf12f, type: 3}
 --- !u!95 &2640900155439301928
 Animator:
   serializedVersion: 5

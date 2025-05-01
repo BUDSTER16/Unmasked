@@ -53,4 +53,9 @@ public class DialogueTrigger : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public bool IsContact()
+    {
+        return contactTrigger;
+    }
 }

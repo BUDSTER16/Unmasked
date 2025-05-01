@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   sword: {fileID: 5100991945744051124, guid: 53d29784553c825489eb204d2ceebd85, type: 3}
+  tTip: {fileID: 7595885468550638989, guid: e6e45f42a68693d41956cfe688fbf12f, type: 3}
 --- !u!50 &951930618220204543
 Rigidbody2D:
   serializedVersion: 4

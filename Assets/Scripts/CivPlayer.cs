@@ -13,6 +13,10 @@ public class CivPlayer : MonoBehaviour
     SpriteRenderer sprt;
     Animator animator;
 
+    [SerializeField] GameObject tTip;
+
+    GameObject activeTTip = null;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -44,5 +48,22 @@ public class CivPlayer : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.GetComponent<DialogueTrigger>() != null || collision.GetComponent<MaskStand>() != null || collision.GetComponent<Elevator>() != null)
+        {
+            if(activeTTip == null) { activeTTip = Instantiate(tTip, transform.position + (Vector3.up * 1.4f), Quaternion.identity, gameObject.transform); }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (activeTTip != null)
+        {
+            Destroy(activeTTip);
+            activeTTip = null;
+        }
     }
 }

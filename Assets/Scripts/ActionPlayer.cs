@@ -26,6 +26,11 @@ public class ActionPlayer : MonoBehaviour
     private bool lockMovement = false;
     private Vector2 dest;
 
+
+    [SerializeField] GameObject tTip;
+
+    GameObject activeTTip = null;
+
     enum Power
     {
         Swords
@@ -116,6 +121,21 @@ public class ActionPlayer : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
                 GetComponent<Renderer>().material.color = Color.white;
             }
+        }else if (collision.GetComponent<DialogueTrigger>() != null || collision.GetComponent<MaskStand>() != null || collision.GetComponent<Elevator>() != null)
+        {
+            if (activeTTip == null) { 
+                if(collision.GetComponent<DialogueTrigger>() != null && !collision.GetComponent<SequenceTrigger>())
+                activeTTip = Instantiate(tTip, transform.position + (Vector3.up * 1.4f), Quaternion.identity, gameObject.transform); 
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (activeTTip != null)
+        {
+            Destroy(activeTTip);
+            activeTTip = null;
         }
     }
 
