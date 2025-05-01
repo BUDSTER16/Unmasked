@@ -759,6 +759,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 951930618220204543, guid: 653d1225dbeec744fa9974ef1fdcacde, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4256531952031224476, guid: 653d1225dbeec744fa9974ef1fdcacde, type: 3}
       propertyPath: m_Name
       value: Hero

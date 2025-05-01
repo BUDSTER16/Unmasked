@@ -9,7 +9,7 @@ public class ActionPlayer : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     [Header("Player Stats")]
-    [SerializeField] float speed = 6f;
+    [SerializeField] float speed = 10f;
 
     [Header("Powers")]
     [SerializeField] GameObject sword;
@@ -19,7 +19,10 @@ public class ActionPlayer : MonoBehaviour
 
     private Power activePower;
 
-    private bool powerOnCooldown = false;
+    private bool throwOnCooldown = false;
+    private bool blastOnCooldown = false;
+
+    private bool blasting = false;
 
     private int HP = 14;
 
@@ -58,7 +61,11 @@ public class ActionPlayer : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0) && !lockMovement)
         {
-            UsePower();
+            UseThrow();
+        }
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            UpwardBlast();
         }
 
         if(lockMovement)
@@ -73,7 +80,7 @@ public class ActionPlayer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!lockMovement) { rb.velocity = new Vector2(horizontal * speed, vertical * speed / 1.5f); }
+        if (!lockMovement) { rb.velocity = new Vector2(horizontal * speed, rb.velocity.y); }
         else 
         {
             rb.velocity = Vector2.zero; 
@@ -81,9 +88,9 @@ public class ActionPlayer : MonoBehaviour
         }
     }
 
-    private void UsePower()
+    private void UseThrow()
     {
-        if(!powerOnCooldown)
+        if(!throwOnCooldown)
         {
             switch (activePower)
             {
@@ -92,15 +99,22 @@ public class ActionPlayer : MonoBehaviour
                     GetComponent<Animator>().SetTrigger("Attack");
                     break;
             }
-            StartCoroutine(Cooldown());
+            StartCoroutine(SwordThrowCooldown());
         }
     }
 
-    IEnumerator Cooldown()
+    IEnumerator SwordThrowCooldown()
     {
-        powerOnCooldown = true;
+        throwOnCooldown = true;
         yield return new WaitForSeconds(0.7f);
-        powerOnCooldown = false;
+        throwOnCooldown = false;
+    }
+
+    IEnumerator UpBlastCooldown()
+    {
+        blastOnCooldown = true;
+        yield return new WaitForSeconds(5f);
+        blastOnCooldown = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -152,5 +166,32 @@ public class ActionPlayer : MonoBehaviour
     public void Sequence(Vector2 destination)
     {
         dest = destination;
+    }
+
+    private void UpwardBlast()
+    {
+        if(!blastOnCooldown)
+        {
+            StartCoroutine(ResetGravity());
+            StartCoroutine(UpBlastCooldown());
+            rb.AddForce(new Vector2(0, 1000));
+        }
+    }
+
+    IEnumerator ResetGravity()
+    {
+        rb.gravityScale = 0;
+        blasting = true;
+        yield return new WaitForSeconds(1);
+        rb.gravityScale = 1;
+        yield return new WaitForSeconds(2);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(blasting)
+        {
+            blasting = false;
+        }
     }
 }
