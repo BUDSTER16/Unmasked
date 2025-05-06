@@ -27,6 +27,16 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void DieToSlam()
+    {
+        Kill();
+    }
+
+    public void DieToDash()
+    {
+        Kill();
+    }
+
     private void Kill()
     {
         Destroy(gameObject);

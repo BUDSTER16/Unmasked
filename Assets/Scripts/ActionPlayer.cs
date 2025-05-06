@@ -13,6 +13,7 @@ public class ActionPlayer : MonoBehaviour
 
     [Header("Powers")]
     [SerializeField] GameObject sword;
+    [SerializeField] GameObject slam;
 
 
     private float vertical, horizontal;
@@ -21,8 +22,10 @@ public class ActionPlayer : MonoBehaviour
 
     private bool throwOnCooldown = false;
     private bool blastOnCooldown = false;
+    private bool dashOnCooldown = false;
 
     private bool blasting = false;
+    private bool slamming = false;
 
     private int HP = 14;
 
@@ -61,11 +64,15 @@ public class ActionPlayer : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0) && !lockMovement)
         {
-            UseThrow();
+            UsePower();
         }
         if(Input.GetKeyUp(KeyCode.Space))
         {
             UpwardBlast();
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            Dash();
         }
 
         if(lockMovement)
@@ -81,14 +88,14 @@ public class ActionPlayer : MonoBehaviour
     private void FixedUpdate()
     {
         if (!lockMovement) { rb.velocity = new Vector2(horizontal * speed, rb.velocity.y); }
-        else 
+        else if(!slamming) 
         {
             rb.velocity = Vector2.zero; 
             
         }
     }
 
-    private void UseThrow()
+    private void UsePower()
     {
         if(!throwOnCooldown)
         {
@@ -113,8 +120,15 @@ public class ActionPlayer : MonoBehaviour
     IEnumerator UpBlastCooldown()
     {
         blastOnCooldown = true;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         blastOnCooldown = false;
+    }
+
+    IEnumerator DashCooldown()
+    {
+        dashOnCooldown = true;
+        yield return new WaitForSeconds(1.5f);
+        dashOnCooldown = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -170,17 +184,69 @@ public class ActionPlayer : MonoBehaviour
 
     private void UpwardBlast()
     {
-        if(!blastOnCooldown)
+        if(!blastOnCooldown && !blasting)
         {
             StartCoroutine(ResetGravity());
             StartCoroutine(UpBlastCooldown());
-            rb.AddForce(new Vector2(0, 1000));
+            rb.AddForce(new Vector2(0, 600));
+            blasting = true;
+        }else if(blasting)
+        {
+            slamming = true;
+            blasting = false;
+            rb.velocity.Set(0, 0);
+            if(spriteRenderer.flipX)
+            {
+                rb.AddForce(new Vector2(-75, -75), ForceMode2D.Impulse);
+            }
+            else
+            {
+                rb.AddForce(new Vector2(-75, -75), ForceMode2D.Impulse);
+            }
+        }
+    }
+
+    private void Dash()
+    {
+        RaycastHit2D target;
+        if (spriteRenderer.flipX)
+        {
+            target = Physics2D.Raycast(transform.position, Vector2.left, 3);
+        }
+        else
+        {
+            target = Physics2D.Raycast(transform.position, Vector2.right, 3, LayerMask.GetMask("Terrain", "Default"));
+        }
+        
+
+        if(target && !dashOnCooldown)
+        {
+            Debug.Log(target.transform.gameObject.name);
+            if (target.transform.tag == "Enemy")
+            {
+                Vector3 targetPos = target.transform.position;
+                target.transform.GetComponent<Enemy>().DieToDash();
+                transform.position = targetPos;
+            }
+            
+        }
+        else if (!dashOnCooldown)
+        {
+            if (spriteRenderer.flipX)
+            {
+                transform.position -= new Vector3(3, 0, 0);
+            }
+            else
+            {
+                transform.position += new Vector3(3, 0, 0);
+            }
+            StartCoroutine(DashCooldown());
         }
     }
 
     IEnumerator ResetGravity()
     {
-        rb.gravityScale = 0;
+        rb.gravityScale = 0.5f;
         blasting = true;
         yield return new WaitForSeconds(1);
         rb.gravityScale = 1;
@@ -189,9 +255,20 @@ public class ActionPlayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(blasting)
+        if(blasting && Physics2D.Raycast(transform.position, -Vector2.up, 1, 6))
         {
             blasting = false;
         }
+        if(slamming)
+        {
+            Slam();
+            slamming = false;
+            Debug.Log("slammed the ground");
+        }
+    }
+
+    private void Slam()
+    {
+        Instantiate(slam, transform.position - new Vector3(0, 1, 0), Quaternion.identity);
     }
 }

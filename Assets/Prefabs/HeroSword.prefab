@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6938681168191167540}
   - component: {fileID: 9000478538967220693}
   - component: {fileID: 5942319764176347537}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HeroSword
   m_TagString: Player Projectile
   m_Icon: {fileID: 0}

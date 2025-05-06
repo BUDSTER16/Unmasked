@@ -245,7 +245,7 @@ Transform:
   m_GameObject: {fileID: 260724580}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 27.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -261,7 +261,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3021917564691013299, guid: f733e09c030d2924591c661ddf43c167, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.79
+      value: 35.33
       objectReference: {fileID: 0}
     - target: {fileID: 3021917564691013299, guid: f733e09c030d2924591c661ddf43c167, type: 3}
       propertyPath: m_LocalPosition.y
@@ -677,7 +677,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1043606781}
   - component: {fileID: 1043606780}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Daytime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,10 +759,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 951930618220204543, guid: 653d1225dbeec744fa9974ef1fdcacde, type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4256531952031224476, guid: 653d1225dbeec744fa9974ef1fdcacde, type: 3}
       propertyPath: m_Name
       value: Hero
@@ -838,7 +834,7 @@ Transform:
   m_GameObject: {fileID: 1068035796}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55.3, y: 0, z: 0}
+  m_LocalPosition: {x: 49.15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1256,7 +1252,7 @@ GameObject:
   - component: {fileID: 1428862736}
   - component: {fileID: 1428862735}
   - component: {fileID: 1428862734}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Building1_day
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1414,7 +1410,7 @@ GameObject:
   - component: {fileID: 1438843564}
   - component: {fileID: 1438843563}
   - component: {fileID: 1438843562}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Building1_day (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1649,7 +1645,7 @@ GameObject:
   - component: {fileID: 1751793789}
   - component: {fileID: 1751793788}
   - component: {fileID: 1751793787}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Building1_day (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1807,7 +1803,7 @@ GameObject:
   - component: {fileID: 1791747911}
   - component: {fileID: 1791747910}
   - component: {fileID: 1791747909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Building_Double
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2050,7 +2046,7 @@ Transform:
   m_GameObject: {fileID: 1948208742}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.918739, y: 11.00429, z: -0.22043607}
+  m_LocalPosition: {x: 8.13, y: 11.00429, z: -0.22043607}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2109,7 +2105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3776367256698043774, guid: 0577df84bb9155c40a4bebd67cfff67f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.66714
+      value: 23.66
       objectReference: {fileID: 0}
     - target: {fileID: 3776367256698043774, guid: 0577df84bb9155c40a4bebd67cfff67f, type: 3}
       propertyPath: m_LocalPosition.z
